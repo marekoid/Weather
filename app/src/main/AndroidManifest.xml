@@ -3,6 +3,7 @@
     package="com.example.weather">
 
     <application
+        android:name=".os.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Weather">
         <activity
-            android:name=".ItemListActivity"
+            android:name=".view.ItemListActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.Weather.NoActionBar">
             <intent-filter>
@@ -20,13 +21,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ItemDetailActivity"
+            android:name=".view.ItemDetailActivity"
             android:label="@string/title_item_detail"
-            android:parentActivityName=".ItemListActivity"
+            android:parentActivityName=".view.ItemListActivity"
             android:theme="@style/Theme.Weather.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.weather.ItemListActivity" />
+                android:value="com.example.weather.view.ItemListActivity" />
         </activity>
     </application>
 

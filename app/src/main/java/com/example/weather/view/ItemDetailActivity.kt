@@ -1,9 +1,10 @@
-package com.example.weather
+package com.example.weather.view
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.example.weather.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 
@@ -42,8 +43,10 @@ class ItemDetailActivity : AppCompatActivity() {
             // using a fragment transaction.
             val fragment = ItemDetailFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ItemDetailFragment.ARG_ITEM_ID,
-                            intent.getStringExtra(ItemDetailFragment.ARG_ITEM_ID))
+                    putString(
+                        ItemDetailFragment.ARG_ITEM_ID,
+                        intent.getStringExtra(ItemDetailFragment.ARG_ITEM_ID)
+                    )
                 }
             }
 
