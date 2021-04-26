@@ -11,8 +11,7 @@ import org.junit.Test
 
 class ApiDataParsingTest {
 
-    private val adapter: JsonAdapter<Response> =
-            Moshi.Builder().build().adapter(Response::class.java)
+    val adapter: JsonAdapter<Response> = Moshi.Builder().build().adapter(Response::class.java)
 
     @Test
     fun list() {
