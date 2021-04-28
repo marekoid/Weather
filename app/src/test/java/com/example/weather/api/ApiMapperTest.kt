@@ -16,6 +16,6 @@ class ApiMapperTest {
 
         val result = subject.map(testData)
 
-        assertThat(result).isEqualTo(Item(1L, 22) to Details(18, 21))
+        assertThat(result).isEqualTo(Item(1000L, 22) to Details(18, 21))
     }
 }
