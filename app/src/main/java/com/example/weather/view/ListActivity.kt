@@ -12,6 +12,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weather.R
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -44,9 +46,20 @@ class ListActivity : AppCompatActivity() {
             twoPane = true
         }
 
-        viewModel.items.observe(this) { items ->
+        viewModel.items.observe(this) { itemsValue ->
             val recyclerView: RecyclerView = findViewById(R.id.list)
-            recyclerView.adapter = Adapter(items)
+            when (itemsValue) {
+                is ItemsValue.Items -> recyclerView.adapter = Adapter(itemsValue.items)
+                is ItemsValue.Error -> Snackbar.make(
+                    findViewById(android.R.id.content), itemsValue.message, Snackbar.LENGTH_SHORT
+                ).apply {
+                    addCallback(object : BaseTransientBottomBar.BaseCallback<Snackbar>() {
+                        override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
+                            finish()
+                        }
+                    })
+                }.show()
+            }
         }
     }
 

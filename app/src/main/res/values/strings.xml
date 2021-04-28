@@ -2,4 +2,5 @@
     <string name="appName">Weather</string>
     <string name="listTitle">3-hourly feels like °C</string>
     <string name="detailTitle">Wind km/h</string>
+    <string name="fetchError">Fetch error</string>
 </resources>
