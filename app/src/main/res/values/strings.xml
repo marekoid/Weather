@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">Weather</string>
-    <string name="title_item_detail">Item Detail</string>
+    <string name="appName">Weather</string>
+    <string name="listTitle">3-hourly feels like °C</string>
+    <string name="detailTitle">Wind km/h</string>
 </resources>
